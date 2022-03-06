@@ -130,12 +130,12 @@ public class DBHandler {
     
     public static Person validateLogin(String username, String password) throws ConnectException {
         String body = "username="+username+"&password="+password;
-        StringBuilder content = dbAPICallPostAuth("http://localhost:8081/login", body);
+        StringBuilder content = dbAPICallPostAuth("https://com-iv1201-server.herokuapp.com/login", body);
         if (content == null)
             return null;
          
         JSONObject myJsonObj = new JSONObject(content.toString());
-        StringBuilder contentUser = dbAPICallGet("http://localhost:8081/user/"+username, myJsonObj.getString("access_Token"));
+        StringBuilder contentUser = dbAPICallGet("https://com-iv1201-server.herokuapp.com/user/"+username, myJsonObj.getString("access_Token"));
         JSONObject myJsonObj2 = new JSONObject(contentUser.toString());
         Person person = new Person(myJsonObj2.getInt("id"),myJsonObj2.getString("name"),myJsonObj.getString("access_Token"), myJsonObj2.getJSONObject("role").getString("name"));
         users.put(username, person);
@@ -145,7 +145,7 @@ public class DBHandler {
 
     public static String validateEmail(String email) throws ConnectException{
         String body = "email="+email;
-        StringBuilder content = dbAPICallPostAuth("http://localhost:8081/resetAccount/getToken", body);
+        StringBuilder content = dbAPICallPostAuth("https://com-iv1201-server.herokuapp.com/resetAccount/getToken", body);
         if (content == null)
             return null;
         System.out.println(content.toString());
@@ -155,7 +155,7 @@ public class DBHandler {
     public static String validateToken(String token) throws ConnectException{
         String body = "token="+token;
         System.out.println("token"+token);
-        StringBuilder content = dbAPICallPostAuth("http://localhost:8081/resetAccount/validateToken", body);
+        StringBuilder content = dbAPICallPostAuth("https://com-iv1201-server.herokuapp.com/resetAccount/validateToken", body);
         if (content == null)
             return null;
         System.out.println(content.toString());
@@ -169,7 +169,7 @@ public class DBHandler {
 //                + "'password': '" + user.getPassword() + "',"
 //                + "'token': '" + token + "'"
 //                + "}";
-        StringBuilder content = dbAPICallPostAuth("http://localhost:8081/resetAccount/updateAccount", body);
+        StringBuilder content = dbAPICallPostAuth("https://com-iv1201-server.herokuapp.com/resetAccount/updateAccount", body);
         if (content == null)
             return null;
         System.out.println(content.toString());
@@ -183,12 +183,12 @@ public class DBHandler {
                 + "'password': '" + user.getPassword() + "',"
                 + "'email': '" + user.getEmail() + "'"
                 + "}";
-        dbAPICallPost("http://localhost:8081/updateuser", body, person.getToken());
+        dbAPICallPost("https://com-iv1201-server.herokuapp.com/updateuser", body, person.getToken());
     }
     
     public static String applications(String Username){
         Person person = users.get(Username);
-        StringBuilder content = dbAPICallGet("http://localhost:8081/applications/" + person.getId(), person.getToken());
+        StringBuilder content = dbAPICallGet("https://com-iv1201-server.herokuapp.com/applications/" + person.getId(), person.getToken());
         return content.toString();
     }
     
@@ -201,7 +201,7 @@ public class DBHandler {
                 + "'years_of_experience': '" + application.getExperience() + "'"
                 + "}";
         
-        dbAPICallPost("http://localhost:8081/addProfile", body, person.getToken());
+        dbAPICallPost("https://com-iv1201-server.herokuapp.com/addProfile", body, person.getToken());
         body = "{"
                 + "'person_id': '" + person.getId() + "',"
                 + "'from_date': '" + application.getStart() + "',"
@@ -209,14 +209,14 @@ public class DBHandler {
                 + "}";
         
         System.out.println("start: " +application.getStart()+ ", end: " + application.getEnd());
-        dbAPICallPost("http://localhost:8081/addAvailability", body, person.getToken());
+        dbAPICallPost("https://com-iv1201-server.herokuapp.com/addAvailability", body, person.getToken());
         
     }
     
     
     public static List<Competence> loadCompetence(String language) {
         List<Competence> competenceList = new ArrayList<Competence>();
-        StringBuilder content = dbAPICallGet("http://localhost:8081/competences", "");
+        StringBuilder content = dbAPICallGet("https://com-iv1201-server.herokuapp.com/competences", "");
         JSONArray myJsonArray = new JSONArray(content.toString());
         int j = 0;
         try{
