@@ -189,6 +189,7 @@ public class DBHandler {
     public static String applications(String Username){
         Person person = users.get(Username);
         StringBuilder content = dbAPICallGet("https://com-iv1201-server.herokuapp.com/applications/" + person.getId(), person.getToken());
+        System.out.println("applications: " + content.toString());
         return content.toString();
     }
     
