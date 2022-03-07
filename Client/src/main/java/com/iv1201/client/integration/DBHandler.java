@@ -188,12 +188,9 @@ public class DBHandler {
     
     public static String applications(String Username){
         Person person = users.get(Username);
-<<<<<<< HEAD
+
         StringBuilder content = dbAPICallGet("https://com-iv1201-server.herokuapp.com/applications/" + person.getId(), person.getToken());
         System.out.println("applications: " + content.toString());
-=======
-        StringBuilder content = dbAPICallGet("http://localhost:8081/applications/" + person.getId(), person.getToken());
->>>>>>> parent of b8ad396 (fixed rest url)
         return content.toString();
     }
     
