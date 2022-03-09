@@ -17,8 +17,6 @@ import java.net.ConnectException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 /**
  *
@@ -32,7 +30,7 @@ public class ResetAccountController {
      * @param model Used by Thymeleaf
      * @return view used
      */
-    @GetMapping(value = "/resetAccount")
+    @RequestMapping(value = "/resetAccount", method = RequestMethod.GET)
     public String resetAccount(Model model){
         if (LoginController.isAuthenticated()) {
             return "redirect:startpage";
@@ -47,7 +45,7 @@ public class ResetAccountController {
      * @param userEmail The user resets based on email
      * @return the view with a message depending on how it went 
      */
-    @PostMapping(value = "/resetAccount")
+    @RequestMapping(value = "/resetAccount", method = RequestMethod.POST)
     public String resetPassword(Model model, HttpServletRequest request, @RequestParam("email") String userEmail) {
         String serverMsg = "";
         try {
