@@ -20,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 /**
  *
  * @author Zarcez
@@ -29,24 +30,25 @@ public class ResetAccountController {
 
     /**
      * Start view for page when resetting users without username or password
+     * 
      * @param model Used by Thymeleaf
      * @return view used
      */
-
     @GetMapping(value = "/resetAccountt")
-    public String resetAccount(Model model){
+    public String resetAccount(Model model) {
         if (LoginController.isAuthenticated()) {
             return "redirect:startpage";
         }
         return "resetaccount";
     }
-    
+
     /**
      * Post method used for getting a token for which the user can reset the account
-     * @param model Used by Thymeleaf
-     * @param request 
+     * 
+     * @param model     Used by Thymeleaf
+     * @param request
      * @param userEmail The user resets based on email
-     * @return the view with a message depending on how it went 
+     * @return the view with a message depending on how it went
      */
     @PostMapping(value = "/resetAccount")
     public String resetPassword(Model model, HttpServletRequest request, @RequestParam("email") String userEmail) {
@@ -56,14 +58,14 @@ public class ResetAccountController {
         } catch (ConnectException ex) {
             return "redirect:login?db";
         }
-        if(serverMsg.contains("ok"))
-                model.addAttribute("ok",true);
-        else if(serverMsg.contains("invalid email"))
-                model.addAttribute("invalid",true);
-        else if(serverMsg.contains("already been reset"))
-                model.addAttribute("reset",true);
+        if (serverMsg.contains("ok"))
+            model.addAttribute("ok", true);
+        else if (serverMsg.contains("invalid email"))
+            model.addAttribute("invalid", true);
+        else if (serverMsg.contains("already been reset"))
+            model.addAttribute("reset", true);
         else
-            model.addAttribute("error",true);
+            model.addAttribute("error", true);
         return "resetaccount";
     }
 
