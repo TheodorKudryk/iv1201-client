@@ -186,14 +186,16 @@ public class DBHandler {
         dbAPICallPost("https://com-iv1201-server.herokuapp.com/updateuser", body, person.getToken());
     }
     
-    public static String applications(String Username){
+    public static String loadApplications(String Username){
         Person person = users.get(Username);
         StringBuilder content = dbAPICallGet("https://com-iv1201-server.herokuapp.com/applications/" + person.getId(), person.getToken());
         System.out.println("applications: " + content.toString());
+        if(!content.toString().contains("person_id"))
+            return null;
         return content.toString();
     }
     
-    public static void application(ApplicationDTO application, String Username) throws ConnectException{
+    public static void sendApplication(ApplicationDTO application, String Username) throws ConnectException{
         Person person = users.get(Username);
         System.out.println("check 1: " + person.getToken());
         String body = "{"

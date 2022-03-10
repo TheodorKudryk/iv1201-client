@@ -30,7 +30,7 @@ public class ResetAccountController {
      * @param model Used by Thymeleaf
      * @return view used
      */
-    @RequestMapping(value = "/resetAccount", method = RequestMethod.GET)
+    @RequestMapping(value = "/resetAccountt")
     public String resetAccount(Model model){
         if (LoginController.isAuthenticated()) {
             return "redirect:startpage";
