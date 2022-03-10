@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.iv1201.Client.model.UserDTOTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.13 sec
+=======
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.138 sec
+>>>>>>> parent of f7042f6 (testar med invert)
