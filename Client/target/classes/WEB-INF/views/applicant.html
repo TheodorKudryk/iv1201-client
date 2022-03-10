@@ -6,13 +6,12 @@
     <body>
         <tbody>
             <td>
-                <p th:if="${unknownError}" class="error" th:text="#{start.error}"></p>
-                <span th:if="${competence_profile == null}">
+                
                     <h1>
                         <td th:text="#{txt.welcome} "></td>
                         <td th:text="#{txt.apply}"></td>
                     </h1>
-                    <form method="POST" th:object="${ApplicationDTO}" th:action="@{/application}">
+                    <form method="POST" th:action="@{/application}">
                         <span th:text="#{txt.expertise}" /> 
                             <select id="competence" name="competence">
                                 <option th:each="competence : ${competences}" th:value="${competence.id}" th:text="${competence.name}">
@@ -20,16 +19,15 @@
                             </select><br>
                         <span th:text="#{txt.yearOfExperience}" /> <input type="text" name="experience" id="experience"><br>
                         <span th:text="#{txt.timePeriod}" /> <br>
-                        <span th:text="#{txt.begin}" /><input type="date" id="start" name="start"
+                        <span th:text="#{txt.begin}" /><input type="date" id="begin" name="begin"
                             value="2022-06-01"
-                            min="2022-06-01" max="2022-08-31"><br>
+                            min="2022-06-01" max="2022-08-14"><br>
                         <span th:text="#{txt.end}" /><input type="date" id="end" name="end"
                             value="2022-07-01"
-                            min="2022-06-01" max="2022-08-31"><br>
+                            min="2022-07-01" max="2022-08-31"><br>
                         <input type="hidden" name="username" th:attr="value=${username}">
                         <input type="submit" th:value="#{txt.apply}">
                     </form>
-                </span>
                 <span th:unless="${competence_profile == null}">
                     <h1>
                         <td th:text="#{txt.applied}"></td>

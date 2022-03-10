@@ -1,7 +1,7 @@
 package com.iv1201.client.model;
 
 /**
- * Class for saving info about a users username, password and their email
+ *
  * @author theok
  */
 public class UserDTO {
