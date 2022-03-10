@@ -13,8 +13,8 @@
         <p th:if="${error}" class="error" th:text="#{resetAct.error}"></p>
         <h1><span th:text="#{txt.userUpdate}" /></h1>
         <form method="POST" action="/resetAccount">
-            <span th:text="#{txt.email}" /> <input type="text" name="email" id="email"><br>
-            <input type="hidden" name="action" value="login">
+            <span th:text="#{txt.email}" /> <input type="text" name="email" id="email" required><br>
+            <input type="hidden" name="action" value="login" >
             <input type="submit" value="update">
         </form>
     </body>

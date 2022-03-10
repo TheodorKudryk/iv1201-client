@@ -13,8 +13,8 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 
 
 /**
- *
- * @author leohj
+ * Part of spring security, serves as config file for customizing spring security
+ * @author Zarcez
  */
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -46,7 +46,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .csrf().disable()
             .authorizeRequests()
                 .antMatchers("/startpage").hasAnyRole("recruiter","applicant")
-                .antMatchers("/login**","/userUpdate**","/resetAccountt").permitAll()
+                .antMatchers("/login**","/userUpdate**","/resetAccount","/error").permitAll()
                 .anyRequest().authenticated()
             .and()
                 .formLogin()

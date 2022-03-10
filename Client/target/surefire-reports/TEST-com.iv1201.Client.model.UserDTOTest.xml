@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="com.iv1201.Client.model.UserDTOTest" time="0.32" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="com.iv1201.Client.model.UserDTOTest" time="0.129" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.12+8-LTS-237"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.12\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\theok\OneDrive\Dokument\GitHub\iv1201-client\Client"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\theok\OneDrive\Dokument\GitHub\IV1201-projekt\Client"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://openjdk.java.net/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="SE"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\theok\OneDrive\Dokument\GitHub\iv1201-client\Client"/>
+    <property name="user.dir" value="C:\Users\theok\OneDrive\Dokument\GitHub\IV1201-projekt\Client"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.12+8-LTS-237"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
@@ -29,7 +29,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-12.1\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans-12.1\netbeans\java\maven\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.12\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\erl10.3\bin;C:\Program Files (x86)\Elixir\bin;C:\Users\theok\.mix\escripts;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Users\theok\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\theok\AppData\Local\Programs\Python\Python39\;C:\Users\theok\AppData\Local\Microsoft\WindowsApps;C:\Users\theok\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\theok\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Users\theok\AppData\Local\GitHubDesktop\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\Java\jdk1.8.0_271\bin;C:\Program Files\PostgreSQL\14\bin;C:\Program Files\PostgreSQL\14\lib;C:\Users\theok\Downloads\apache-maven-3.8.4\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\theok\AppData\Local\Microsoft\WindowsApps;C:\Users\theok\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\theok\AppData\Local\GitHubDesktop\bin;C:\Users\theok\AppData\Roaming\npm;C:\selenium-webdrivers;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.12\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;C:\Program Files\erl10.3\bin;C:\Program Files (x86)\Elixir\bin;C:\Users\theok\.mix\escripts;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Users\theok\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\theok\AppData\Local\Programs\Python\Python39\;C:\Users\theok\AppData\Local\Microsoft\WindowsApps;C:\Users\theok\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\theok\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Users\theok\AppData\Local\GitHubDesktop\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\Java\jdk1.8.0_271\bin;C:\Program Files\PostgreSQL\14\bin;C:\Program Files\PostgreSQL\14\lib;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\theok\AppData\Local\Microsoft\WindowsApps;C:\Users\theok\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\theok\AppData\Local\GitHubDesktop\bin;C:\Users\theok\AppData\Roaming\npm;C:\selenium-webdrivers;;."/>
     <property name="maven.conf" value="C:\Program Files\NetBeans-12.1\netbeans\java\maven\bin\../conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="55.0"/>
@@ -64,7 +64,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.iv1201.Client.model.UserDTOTest" name="testGetUsernameTest" time="0.009"/>
+  <testcase classname="com.iv1201.Client.model.UserDTOTest" name="testGetUsernameTest" time="0.005"/>
   <testcase classname="com.iv1201.Client.model.UserDTOTest" name="testGetPassword" time="0"/>
   <testcase classname="com.iv1201.Client.model.UserDTOTest" name="testGetEmail" time="0"/>
 </testsuite>
