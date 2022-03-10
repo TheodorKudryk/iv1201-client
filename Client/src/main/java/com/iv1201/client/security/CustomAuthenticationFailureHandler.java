@@ -16,13 +16,15 @@ import org.springframework.stereotype.Component;
 public class CustomAuthenticationFailureHandler  
   implements AuthenticationFailureHandler {
  
-
-    @Override
     /**
      * Checks what kind of exception has been thrown and depending on the 
      * exception, redirects the user to different URL that display an 
      * error message
+     * @param request info about the request
+     * @param exception info about what kind of exception was thrown
+     * @param response used for sending a redirect 
      */
+    @Override
     public void onAuthenticationFailure(
         HttpServletRequest request,
         HttpServletResponse response,

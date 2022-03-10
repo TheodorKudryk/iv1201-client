@@ -1,7 +1,7 @@
 package com.iv1201.client.model;
 
 /**
- *
+ * Class for saving competences with id and a name
  * @author theok
  */
 public class Competence {

@@ -25,7 +25,7 @@ public class LoginController {
      */
     @RequestMapping(value = "/login")
     public String login(Model model, String login, String db, String error){
-        if (isAuthenticated()) {
+        if (isAuthenticated() && (db == null || error == null)) {
             return "redirect:startpage";
         }
         if(login != null){
@@ -45,17 +45,21 @@ public class LoginController {
      * @param request 
      * @param language Used for the loading competence
      * @param model Used by Thymeleaf
+     * @param error Used if the user was sent here by an error
      * @return the view used 
      */
     @RequestMapping(value = "/startpage")
-    public String startpage(HttpServletRequest request, @RequestHeader("accept-language") String language,ModelMap model){
+    public String startpage(HttpServletRequest request, @RequestHeader("accept-language") String language,ModelMap model, String error){
+        if(error != null){
+            model.addAttribute("unknownError",true);
+        }
         if (request.isUserInRole("ROLE_recruiter")) {
             return "recruiter";
         }   
         String[] langarray = language.split(",", 2);
         model.addAttribute("competences", DBHandler.loadCompetence(langarray[0]));
         model.addAttribute("username", request.getRemoteUser());
-        model.addAttribute("competence_profile", DBHandler.loadApplications(request.getRemoteUser()));
+        model.addAttribute("competence_profile", DBHandler.applications(request.getRemoteUser()));
         return "applicant";
     }
     

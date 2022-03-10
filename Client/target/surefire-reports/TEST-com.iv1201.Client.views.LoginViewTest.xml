@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.iv1201.Client.views.LoginViewTest" time="34.196" errors="2" skipped="0">
+<testsuite tests="2" failures="0" name="com.iv1201.Client.views.LoginViewTest" time="16.212" errors="2" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.12+8-LTS-237"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.12\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\theok\OneDrive\Dokument\GitHub\iv1201-client\Client"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\theok\OneDrive\Dokument\GitHub\IV1201-projekt\Client"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://openjdk.java.net/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="SE"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\theok\OneDrive\Dokument\GitHub\iv1201-client\Client"/>
+    <property name="user.dir" value="C:\Users\theok\OneDrive\Dokument\GitHub\IV1201-projekt\Client"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.12+8-LTS-237"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
@@ -29,7 +29,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-12.1\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans-12.1\netbeans\java\maven\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.12\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\erl10.3\bin;C:\Program Files (x86)\Elixir\bin;C:\Users\theok\.mix\escripts;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Users\theok\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\theok\AppData\Local\Programs\Python\Python39\;C:\Users\theok\AppData\Local\Microsoft\WindowsApps;C:\Users\theok\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\theok\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Users\theok\AppData\Local\GitHubDesktop\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\Java\jdk1.8.0_271\bin;C:\Program Files\PostgreSQL\14\bin;C:\Program Files\PostgreSQL\14\lib;C:\Users\theok\Downloads\apache-maven-3.8.4\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\theok\AppData\Local\Microsoft\WindowsApps;C:\Users\theok\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\theok\AppData\Local\GitHubDesktop\bin;C:\Users\theok\AppData\Roaming\npm;C:\selenium-webdrivers;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.12\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;C:\Program Files\erl10.3\bin;C:\Program Files (x86)\Elixir\bin;C:\Users\theok\.mix\escripts;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Users\theok\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\theok\AppData\Local\Programs\Python\Python39\;C:\Users\theok\AppData\Local\Microsoft\WindowsApps;C:\Users\theok\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\theok\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Users\theok\AppData\Local\GitHubDesktop\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files\Java\jdk1.8.0_271\bin;C:\Program Files\PostgreSQL\14\bin;C:\Program Files\PostgreSQL\14\lib;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\theok\AppData\Local\Microsoft\WindowsApps;C:\Users\theok\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\theok\AppData\Local\GitHubDesktop\bin;C:\Users\theok\AppData\Roaming\npm;C:\selenium-webdrivers;;."/>
     <property name="maven.conf" value="C:\Program Files\NetBeans-12.1\netbeans\java\maven\bin\../conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="55.0"/>
@@ -46,7 +46,7 @@
     <property name="java.class.path" value="C:\Program Files\NetBeans-12.1\netbeans\java\maven\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-12.1\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-12.1\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-11.0.12"/>
     <property name="user.language" value="sv"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -64,20 +64,22 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.iv1201.Client.views.LoginViewTest" name="testUsernameField" time="22.405">
-    <error message="unknown error: net::ERR_CONNECTION_REFUSED
+  <testcase classname="com.iv1201.Client.views.LoginViewTest" name="testUsernameField" time="11.391">
+    <error message="unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
   (Session info: chrome=99.0.4844.51)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-THAMT79&apos;, ip: &apos;192.168.1.51&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.12&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\theok\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50418}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0c4e6c8ea14926daf08bfcadcfafdeed" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_REFUSED
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\theok\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ff44f5fbdbf7e4ddc018a38e963cdc4" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
   (Session info: chrome=99.0.4844.51)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-THAMT79&apos;, ip: &apos;192.168.1.51&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.12&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\theok\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50418}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0c4e6c8ea14926daf08bfcadcfafdeed
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\theok\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ff44f5fbdbf7e4ddc018a38e963cdc4
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -125,28 +127,30 @@ Session ID: 0c4e6c8ea14926daf08bfcadcfafdeed
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:101)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>Starting ChromeDriver 99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}) on port 34422
+    <system-err>Starting ChromeDriver 99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}) on port 31948
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-mars 10, 2022 3:39:52 EM org.openqa.selenium.remote.ProtocolHandshake createSession
+mars 07, 2022 11:08:54 FM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 </system-err>
   </testcase>
-  <testcase classname="com.iv1201.Client.views.LoginViewTest" name="testResetBtn" time="11.78">
-    <error message="unknown error: net::ERR_CONNECTION_REFUSED
+  <testcase classname="com.iv1201.Client.views.LoginViewTest" name="testResetBtn" time="4.815">
+    <error message="unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
   (Session info: chrome=99.0.4844.51)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-THAMT79&apos;, ip: &apos;192.168.1.51&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.12&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\theok\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50620}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9796ee1ab549cb407ce540767c0c7a39" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_REFUSED
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\theok\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54902}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1c45d39396e93a1eabf2814f7bbecd21" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
   (Session info: chrome=99.0.4844.51)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-THAMT79&apos;, ip: &apos;192.168.1.51&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.12&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\theok\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50620}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9796ee1ab549cb407ce540767c0c7a39
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\theok\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54902}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1c45d39396e93a1eabf2814f7bbecd21
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -194,11 +198,11 @@ Session ID: 9796ee1ab549cb407ce540767c0c7a39
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:101)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>Starting ChromeDriver 99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}) on port 4790
+    <system-err>Starting ChromeDriver 99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}) on port 41574
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-mars 10, 2022 3:40:10 EM org.openqa.selenium.remote.ProtocolHandshake createSession
+mars 07, 2022 11:09:04 FM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 </system-err>
   </testcase>

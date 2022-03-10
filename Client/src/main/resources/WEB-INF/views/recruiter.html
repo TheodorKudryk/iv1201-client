@@ -4,6 +4,7 @@
         <div th:replace="fragments :: myheader('Recruiter')"></div>
     </head>
     <body>
+        <p th:if="${unknownError}" class="error" th:text="#{start.error}"></p>
         <h1>
             <td th:text="#{txt.welcome}"></td>
             <td th:text="#{txt.recruiter}"></td>

@@ -1,7 +1,7 @@
 package com.iv1201.client.model;
 
 /**
- *
+ * Class for saving info about the user and their role and token
  * @author leohj
  */
 public class Person {
