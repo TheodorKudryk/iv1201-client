@@ -186,7 +186,7 @@ public class DBHandler {
         return content.toString();
     }
     
-    public static void sendApplication(ApplicationDTO application, String Username) throws ConnectException{
+    public static String sendApplication(ApplicationDTO application, String Username) throws ConnectException{
         Person person = users.get(Username);
         System.out.println("check 1: " + person.getToken());
         String body = "{"
