@@ -27,6 +27,7 @@ public class ResetAccountController {
      * @return view used
      */
     @RequestMapping(value = "/resetAccount", method = RequestMethod.GET)
+
     public String resetAccount(Model model){
         if (LoginController.isAuthenticated()) {
             return "redirect:startpage";
