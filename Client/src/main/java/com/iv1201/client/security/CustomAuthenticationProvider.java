@@ -13,13 +13,19 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
+/**
+ * CustomAuthentication manager, part of spring security, serves a config file
+ * @author Zarcez
+ */
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
-    @Override
     /**
      * Custom Authentication as to handle the username and password on the 
      * database side instead of browser side.
+     * @param authentication part of Spring security
+     * @return authentication
      */
+    @Override
     public Authentication authenticate(Authentication authentication)
             throws AuthenticationException {
         try {
@@ -29,7 +35,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             // You can get the password here
             String password = authentication.getCredentials().toString();
             Person person = DBHandler.validateLogin(username, password);
-            // Checks if there vas a resonse from the server and creates and auth<<
+            // Checks if there vas a resonse from the server and creates and auth
             // with the values
             Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority("ROLE_"+person.getRole()));

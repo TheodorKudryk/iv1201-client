@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <div th:replace="fragments :: myheader('Login Details')"></div>
+        <div th:replace="fragments :: myheader('Reset Account')"></div>
     </head>
     <body>
         <form method="GET" action="/login">
-            <input type="submit" value="back to login">
+            <input type="submit" value="back to login" id="backToLoginBtn">
         </form>
         <p th:if="${ok}" class="error" th:text="#{resetAct.ok}"></p>
         <p th:if="${reset}" class="error" th:text="#{resetAct.reset}"></p>
@@ -15,7 +15,7 @@
         <form method="POST" action="/resetAccount">
             <span th:text="#{txt.email}" /> <input type="text" name="email" id="email" required><br>
             <input type="hidden" name="action" value="login" >
-            <input type="submit" value="update">
+            <input type="submit" value="update" id="updateBtn">
         </form>
     </body>
 </html>

@@ -13,7 +13,7 @@
             <span th:text="#{txt.username}" /> <input type="text" name="username" id="username" required><br>
             <span th:text="#{txt.password}" /> <input type="text" name="password" id="password" required><br>
             <input type="hidden" name="action" value="login">
-            <input type="submit" th:value="#{txt.loginbtn}">
+            <input type="submit" th:value="#{txt.loginbtn}"  id="loginBtn">
         </form>
         <form method="GET" action="/resetAccount">
             <input type="submit" th:value="#{txt.resetpw}" id="resetBtn">

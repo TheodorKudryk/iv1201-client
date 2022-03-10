@@ -16,16 +16,23 @@ import java.util.HashMap;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject; 
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 /**
- *
+ * Handles call to the database API
  * @author leohj
  */
 public class DBHandler {
-    private static HashMap<String, Integer> map = new HashMap<String, Integer>(){{put("sv", 1); put("en", 0);}};
-    private static HashMap<String, Person> users = new HashMap<String, Person>(){};
+    private static final HashMap<String, Integer> map = new HashMap<String, Integer>(){{put("sv", 1); put("en", 0);}};
+    private static final HashMap<String, Person> users = new HashMap<String, Person>(){};
+    private static final BCryptPasswordEncoder bcryptPasswordEndoder = new BCryptPasswordEncoder();
     
-    
+    /**
+     * 
+     * @param urlString
+     * @param body
+     * @return
+     * @throws ConnectException 
+     */
     private static StringBuilder dbAPICallPostAuth(String urlString, String body) throws ConnectException {
         try {
             URL url = new URL(urlString);
@@ -89,7 +96,6 @@ public class DBHandler {
                 content.append(System.lineSeparator());
             }
             connection.disconnect();
-            System.out.println(content);
             return content;
         } catch (Exception ex) {
             content = new StringBuilder();
@@ -98,6 +104,7 @@ public class DBHandler {
     }
     
     private static StringBuilder dbAPICallGet(String urlString, String token) {
+        StringBuilder content;
         try {
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -105,7 +112,6 @@ public class DBHandler {
             connection.setRequestProperty("Content-Type", "application/json");
             if (token != "")
                 connection.setRequestProperty("Authorization", "Bearer "+token);
-            StringBuilder content;
             
             BufferedReader input = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String line;
@@ -118,10 +124,9 @@ public class DBHandler {
             connection.disconnect();
             return content;
         } catch (Exception ex) {
-            System.out.println("Error in dbAPICall()");
-            ex.printStackTrace();
+            content = new StringBuilder();
+            return content.append(ex);
         }
-        return null;
     }
     
     /**
@@ -134,12 +139,12 @@ public class DBHandler {
      */
     public static Person validateLogin(String username, String password) throws ConnectException {
         String body = "username="+username+"&password="+password;
-        StringBuilder content = dbAPICallPostAuth("http://localhost:8081/login", body);
+        StringBuilder content = dbAPICallPostAuth("https://com-iv1201-server.herokuapp.com/login", body);
         if (content == null)
             return null;
          
         JSONObject myJsonObj = new JSONObject(content.toString());
-        StringBuilder contentUser = dbAPICallGet("http://localhost:8081/user/"+username, myJsonObj.getString("access_Token"));
+        StringBuilder contentUser = dbAPICallGet("https://com-iv1201-server.herokuapp.com/user/"+username, myJsonObj.getString("access_Token"));
         JSONObject myJsonObj2 = new JSONObject(contentUser.toString());
         Person person = new Person(myJsonObj2.getInt("id"),myJsonObj2.getString("name"),myJsonObj.getString("access_Token"), myJsonObj2.getJSONObject("role").getString("name"));
         users.put(username, person);
@@ -155,7 +160,7 @@ public class DBHandler {
      */
     public static String validateEmail(String email) throws ConnectException{
         String body = "email="+email;
-        StringBuilder content = dbAPICallPostAuth("http://localhost:8081/resetAccount/getToken", body);
+        StringBuilder content = dbAPICallPostAuth("https://com-iv1201-server.herokuapp.com/resetAccount/getToken", body);
         if (content == null)
             return null;
         return content.toString();
@@ -169,7 +174,7 @@ public class DBHandler {
      */
     public static String validateToken(String token) throws ConnectException{
         String body = "token="+token;
-        StringBuilder content = dbAPICallPostAuth("http://localhost:8081/resetAccount/validateToken", body);
+        StringBuilder content = dbAPICallPostAuth("https://com-iv1201-server.herokuapp.com/resetAccount/validateToken", body);
         if (content == null)
             return null;
         return content.toString();
@@ -183,35 +188,36 @@ public class DBHandler {
      * @throws ConnectException if there is no connection to the database
      */
     public static String updateUser(UserDTO user, String token) throws ConnectException{
-        String body = "username="+user.getUsername()+"&password="+user.getPassword()+"&token="+token;
-        StringBuilder content = dbAPICallPostAuth("http://localhost:8081/resetAccount/updateAccount", body);
+        String encodedPassword = bcryptPasswordEndoder.encode(user.getPassword());
+        String body = "username="+user.getUsername()+"&password="+encodedPassword+"&token="+token;
+        StringBuilder content = dbAPICallPostAuth("https://com-iv1201-server.herokuapp.com/resetAccount/updateAccount", body);
         if (content == null)
             return null;
         return content.toString();
     }
 
     
-    public static String applications(String Username){
+    public static String loadApplications(String Username){
         Person person = users.get(Username);
-        StringBuilder content = dbAPICallGet("http://localhost:8081/applications/" + person.getId(), person.getToken());
+        StringBuilder content = dbAPICallGet("https://com-iv1201-server.herokuapp.com/applications/" + person.getId(), person.getToken());
         return content.toString();
     }
     
     /**
-     * Sends an application to the database handler 
-     * @param application contains all the info about the application
+     * Sends an sendApplication to the database API 
+     * @param application contains all the info about the sendApplication
      * @param Username the username of the logged in user
      * @return message from the server
      * @throws ConnectException if there was no connection to the database handler
      */
-    public static String application(ApplicationDTO application, String Username) throws ConnectException{
+    public static String sendApplication(ApplicationDTO application, String Username) throws ConnectException{
         Person person = users.get(Username);
         String body = "{"
                 + "'person_id': '" + person.getId() + "',"
                 + "'competence_id': '" + application.getCompetence() + "',"
                 + "'years_of_experience': '" + application.getExperience() + "'"
                 + "}";
-        StringBuilder content = dbAPICallPost("http://localhost:8081/addProfile", body, person.getToken());
+        StringBuilder content = dbAPICallPost("https://com-iv1201-server.herokuapp.com/addProfile", body, person.getToken());
         if (!content.toString().contains("OK"))
             return content.toString();
         body = "{"
@@ -220,7 +226,7 @@ public class DBHandler {
                 + "'to_date': '" + application.getEnd() + "'"
                 + "}";
         
-        content = dbAPICallPost("http://localhost:8081/addAvailability", body, person.getToken());
+        content = dbAPICallPost("https://com-iv1201-server.herokuapp.com/addAvailability", body, person.getToken());
         return content.toString();
     }
     
@@ -230,9 +236,9 @@ public class DBHandler {
      * @param language
      * @return 
      */
-    public static List<Competence> loadCompetence(String language) {
+    public static List<Competence> loadCompetences(String language) {
         List<Competence> competenceList = new ArrayList<Competence>();
-        StringBuilder content = dbAPICallGet("http://localhost:8081/competences", "");
+        StringBuilder content = dbAPICallGet("https://com-iv1201-server.herokuapp.com/competences", "");
         JSONArray myJsonArray = new JSONArray(content.toString());
         int j = 0;
         try{
